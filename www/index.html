@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+      -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://whosonfirst-api.mapzen.com https://tile.mapzen.com gap: blob: 'unsafe-eval'; scheme-src 'blob'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: blob:;">
+    
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/mapzen.styleguide.css" />
+    <link rel="stylesheet" type="text/css" href="css/mapzen.api.settings.css" />
+    <link rel="stylesheet" type="text/css" href="css/mapzen.whosonfirst.bookmarks.css" />
+    
+    <link rel="stylesheet" type="text/css" href="css/mapzen.js.css" >
+    <script type="text/javascript" src="js/mapzen.min.js"></script>
+    
+    <title>Who's On First Bookmarks</title>
+  </head>
+  <body>
+    
+    <div class="app">
+	
+	<div class="row">
+	  <div class="col-md-10">
+
+	    <ul class="list-inline">
+              <li><button id="show-trips" class="btn btn-default btn-sm">trips</button></li>
+              <li><button id="show-cities" class="btn btn-default btn-sm">cities</button></li>
+              <li><button id="show-neighbourhoods" class="btn btn-default btn-sm">neighbourhoods</button></li>
+              <li><button id="show-visits" class="btn btn-default btn-sm">visits</button></li>
+              <li><button id="show-lists" class="btn btn-default btn-sm">lists</button></li>
+              <li><button id="show-feelings" class="btn btn-default btn-sm">#feelings</button></li>
+              <li><button id="show-browse" class="btn btn-default btn-sm">browse</button></li>
+	    </ul>
+	  </div>
+	  <div class="col-md-1">
+            <div id="deviceready" class="blink">
+              <p class="event listening">Connecting to Device</p>
+              <p class="event received">Device is Ready</p>
+            </div>
+	    
+	    <!-- <div id="network-status" class="online"></div> -->
+	  </div>
+	</div>
+      
+	<div id="map">
+	</div>
+	
+      </div>
+      
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+    </body>
+</html>
