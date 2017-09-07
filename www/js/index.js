@@ -44,7 +44,7 @@ var app = {
 			this.on_deviceready(id);
 		}
 	},
-
+	
 	'on_deviceready': function(id){
 
 		var _self = this;
@@ -213,15 +213,17 @@ var app = {
 		
 		L.Mapzen.apiKey = api_key;
 
+		// var map = L.Mapzen.map('map');
+
 		var map = L.Mapzen.map('map', {
 						
                         tangramOptions: {
-                                //scene: L.Mapzen.BasemapStyles.Refill,
-                                scene: "tangram/refill-style.zip",
-                                tangramURL: "js/tangram.min.js"
+                                scene: L.Mapzen.BasemapStyles.Refill,
+                                // scene: "tangram/refill-style.zip",
+                                tangramURL: "js/tangram.min.js",
                         }
 		});
-
+		
 		return map;
 	},
 

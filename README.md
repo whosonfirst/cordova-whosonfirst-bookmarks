@@ -19,6 +19,46 @@ cd ../../../../
 cordova ios run
 ```
 
+## mapzen.js
+
+As of this writing it is not possible to use a locally hosted (Tangram) scenefile with `ios` builds. For example, this works:
+
+```
+var map = L.Mapzen.map('map');
+```
+
+And this works:
+
+```
+var map = L.Mapzen.map('map', {
+						
+	tangramOptions: {
+		scene: L.Mapzen.BasemapStyles.Refill,
+		tangramURL: "js/tangram.min.js",
+	}
+});
+```
+
+But this does not:
+
+```
+var map = L.Mapzen.map('map', {
+						
+	tangramOptions: {
+		scene: "tangram/refill-style.zip",
+		tangramURL: "js/tangram.min.js",
+	}
+});
+```
+
+And fails with the following error:
+
+```
+ERROR: Tangram v0.13.2 [error]: Scene.load() failed to load tangram/refill-style.zip: Request error with a status of  Error: Request error with a status of
+```
+
+It is not immediately clear to me _why_ or whether it has something to do with the `Content Security Policy` header which would be weird because the latter form (loading a local scenefile) works just fine in a Cordova `browser` application...
+
 ## See also
 
 * https://github.com/whosonfirst/electron-whosonfirst-bookmarks
