@@ -10,7 +10,7 @@ Ach! I forgot where I wrote this down but basically some part of the install pro
 
 ## ios
 
-The `cordova ios run` command will not work with the default version of `ios-sim` that ships by default. You will need to manually upgrade to version `6.0.0` or higher:
+The `cordova ios run` command will not work with the version of `ios-sim` that ships with Cordova by default. You will need to manually upgrade to version `6.0.0` or higher:
 
 ```
 cd platforms/ios/cordova/node_modules/
