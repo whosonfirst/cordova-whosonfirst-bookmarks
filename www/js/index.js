@@ -204,14 +204,6 @@ var app = {
 		if (! api_key){
 			api_key = this.get_apikey();
 		}
-
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-			console.log("OK");
-			console.log(fs);
-		}, function(err){
-			console.log("NO SOUP FOR YOU");
-			console.log(err);
-		});
 		
 		L.Mapzen.apiKey = api_key;
 
