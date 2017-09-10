@@ -18,41 +18,81 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="css/mapzen.styleguide.css" />
-    <link rel="stylesheet" type="text/css" href="css/mapzen.api.settings.css" />
-    <link rel="stylesheet" type="text/css" href="css/mapzen.whosonfirst.bookmarks.css" />
+
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>    
     
     <link rel="stylesheet" type="text/css" href="css/mapzen.js.css" >
     <script type="text/javascript" src="js/mapzen.min.js"></script>
     
+    <link rel="stylesheet" type="text/css" href="css/mapzen.styleguide.css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/mapzen.api.settings.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/mapzen.whosonfirst.bookmarks.cordova.css" />
+        
     <title>Who's On First Bookmarks</title>
   </head>
   <body>
     
     <div class="app">
-	
-	<div class="row">
-	  <div class="col-md-10">
 
-	    <ul class="list-inline">
-              <li><button id="show-trips" class="btn btn-default btn-sm">trips</button></li>
-              <li><button id="show-cities" class="btn btn-default btn-sm">cities</button></li>
-              <li><button id="show-neighbourhoods" class="btn btn-default btn-sm">neighbourhoods</button></li>
-              <li><button id="show-visits" class="btn btn-default btn-sm">visits</button></li>
-              <li><button id="show-lists" class="btn btn-default btn-sm">lists</button></li>
-              <li><button id="show-feelings" class="btn btn-default btn-sm">#feelings</button></li>
-              <li><button id="show-browse" class="btn btn-default btn-sm">browse</button></li>
+      <nav class="navbar navbar-default">
+	<div class="container-fluid">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+	    </button>
+	    <a class="navbar-brand" href="#">privatezen</a>
+	  </div>
+	  
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+
+              <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">your <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><button id="show-trips" class="btn btn-default btn-sm">trips</button></li>
+		  <li><button id="show-visits" class="btn btn-default btn-sm">visits</button></li>
+		  <li><button id="show-lists" class="btn btn-default btn-sm">lists</button></li>
+		  <li><button id="show-feelings" class="btn btn-default btn-sm">#feelings</button></li>
+		</ul>
+              </li>
+	      
+              <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">places <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><button id="show-cities" class="btn btn-default btn-sm">cities</button></li>
+		  <li><button id="show-neighbourhoods" class="btn btn-default btn-sm">neighbourhoods</button></li>
+		</ul>
+              </li>
+
+              <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">nearby <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><button id="show-browse" class="btn btn-default btn-sm">browse</button></li>
+		</ul>
+	      </li>
+	      
 	    </ul>
-	  </div>
-	  <div class="col-md-1">
-	    <div id="network-status" class="online"></div>
-	  </div>
-	</div>
+	    <form class="navbar-form navbar-right">
+              <div class="form-group">
+		<input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+	    </form>
+	  </div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+      </nav>
+
+      <div id="canvas">
+	<div id="map"></div>
+      </div>
       
-	<div id="map">
-	</div>
-	
       </div>
       
         <script type="text/javascript" src="cordova.js"></script>

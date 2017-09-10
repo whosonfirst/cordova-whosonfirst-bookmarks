@@ -1,0 +1,40 @@
+body {
+    margin-top: 0px !important;
+}
+
+.navbar-brand {
+    float: left !important;
+    padding: 15px 15px !important;
+    font-size: .95em !important;
+    line-height: 25px !important;
+}
+
+.navbar-default {
+    background-color: #000 !important;
+}
+
+.dropdown-menu {
+    background-color: #000 !important;
+    border: none !important;
+    margin-top: 0px !important;
+}
+
+.dropdown-menu li {
+    text-align: left;
+    background-color: #000 !important;    
+}
+
+.dropdown-menu li button {
+    border: none !important;
+    background-color: #000 !important;
+}
+
+.navbar-nav {
+    background-color: #000 !important;
+}
+
+.navbar-nav li button {
+    border: none !important;
+    background-color: #000 !important;
+    color: #fff !important;
+}
