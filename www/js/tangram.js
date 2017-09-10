@@ -44263,7 +44263,7 @@ Utils.io = function (url) {
             request.open(method, url, true);
             request.timeout = timeout;
             request.responseType = responseType;
-            request.onload = function () {
+		request.onload = function () {
                 if (request.status === 200) {
                     if (['text', 'json'].indexOf(request.responseType) > -1) {
                         resolve(request.responseText);
@@ -44271,6 +44271,8 @@ Utils.io = function (url) {
                         resolve(request.response);
                     }
                 } else {
+			console.log(method + " " + url);
+			console.log(request);
                     reject(Error('Request error with a status of ' + request.statusText));
                 }
             };

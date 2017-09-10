@@ -148,12 +148,6 @@ var app = {
 			navigator.geolocation.getCurrentPosition(on_success, on_error, opts);
 		});	
 		
-		var parentElement = document.getElementById(id);
-		var listeningElement = parentElement.querySelector('.listening');
-		var receivedElement = parentElement.querySelector('.received');
-		
-		listeningElement.setAttribute('style', 'display:none;');
-		receivedElement.setAttribute('style', 'display:block;');		
 	},
 
 	'get_apikey': function(){
@@ -210,17 +204,33 @@ var app = {
 		if (! api_key){
 			api_key = this.get_apikey();
 		}
+
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+			console.log("OK");
+			console.log(fs);
+		}, function(err){
+			console.log("NO SOUP FOR YOU");
+			console.log(err);
+		});
 		
 		L.Mapzen.apiKey = api_key;
 
-		// var map = L.Mapzen.map('map');
+		var scene = "tangram/refill-style.zip";
+
+		if (device.platform == "iOS"){
+
+			// Y U NO WORK???? (20170910/thisisaaronland)
+			// var root = cordova.file.applicationDirectory + "www/";
+			// scene = root + scene;
+
+			scene = L.Mapzen.BasemapStyles.Refill;
+		}
 
 		var map = L.Mapzen.map('map', {
 						
                         tangramOptions: {
-                                scene: L.Mapzen.BasemapStyles.Refill,
-                                // scene: "tangram/refill-style.zip",
-                                tangramURL: "js/tangram.min.js",
+				scene: scene,
+                                tangramURL: "js/tangram.js",
                         }
 		});
 		

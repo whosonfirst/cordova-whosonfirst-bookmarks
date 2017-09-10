@@ -25,6 +25,9 @@
         },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.mapzen.whosonfirst.bookmarks"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.mapzen.whosonfirst.bookmarks"
         }
     },
     "dependent_plugins": {

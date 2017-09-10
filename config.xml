@@ -25,6 +25,7 @@
     <engine name="ios" spec="^4.4.0" />
     <engine name="osx" spec="^4.0.1" />
     <plugin name="cordova-plugin-console" spec="^1.0.7" />
+    <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-dialogs" spec="^1.3.3" />
     <plugin name="cordova-plugin-file" spec="^4.3.3" />
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3">
